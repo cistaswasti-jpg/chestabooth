@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f5f4f0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem 0 2rem;
+}
+
+/* logo */
+.logo {
+  position: relative;
+  width: 110px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* photobooth container */
+.photobooth-container {
+  position: relative;
+  width: 90vw;
+  max-width: 450px;
+  aspect-ratio: 588 / 735;
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 2px solid #1e1e1e;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* countdown timer */
+.countdown-timer {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  border: 2px solid #1E1E1E;
+  background: #FFF;
+  color: #1E1E1E;
+  font-family: Castoro, serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+/* Layer 1: Canvas hasil foto */
+#finalCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+  background: transparent;
+}
+
+/* Layer 2: Live video sejajar presisi dengan kotak dalam photostrip */
+#liveVideo {
+  position: absolute;
+  top: 11.43%;
+  left: 9.01%;
+  width: 79.76%;
+  height: 40.20%;
+  object-fit: cover;
+  transform: scaleX(-1);
+  z-index: 2;
+  display: none;
+}
+
+/* Layer 3: Frame overlay di atas video dan foto */
+#frameOverlayCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* controls & buttons */
+.controls {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 0.6rem 1.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #555555;
+  font-family: Castoro, serif;
+  font-weight: 400;
+  background-color: #ffffff;
+  border: 2px solid #1e1e1e;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 0 #1e1e1e;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 0 #1e1e1e;
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #1e1e1e;
+}
+
+#takePhoto, #retakeBtn, #doneBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 8rem;
+  height: 3.2rem;
+}
+
+/* bubble container */
+.bubble-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  opacity: 1;
+  transform-origin: center;
+  animation-name: riseSpin;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes riseSpin {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}

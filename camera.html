@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camera - Chestabooth</title>
+
+  <link rel="icon" href="Images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="cam.css" />
+</head>
+<body>
+  <div class="logo">
+    <img src="Images/Logo.png" alt="Logo">
+  </div>
+
+  <div class="photobooth-container" id="booth">
+    <div class="bubble-container"></div>
+    <div class="countdown-timer">3</div>
+
+    <!-- Layer 1 (Bawah): Hasil jepretan foto -->
+    <canvas id="finalCanvas" width="1176" height="1470"></canvas>
+
+    <!-- Layer 2 (Tengah): Live preview kamera -->
+    <video id="liveVideo" autoplay playsinline muted></video>
+
+    <!-- Layer 3 (Atas): Bingkai photostrip-straight.png (pasir cokelat berada di depan foto) -->
+    <canvas id="frameOverlayCanvas" width="1176" height="1470"></canvas>
+  </div>
+
+  <div class="controls">
+    <button id="takePhoto">Capture</button>
+    <button id="retakeBtn" style="display: none;">Retake</button>
+    <button id="doneBtn" style="display: none;">Done</button>
+  </div>
+
+  <script src="cam.js"></script>
+  <script src="bubble.js"></script>
+</body>
+</html>

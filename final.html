@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decorate & Download - Chestabooth</title>
+
+  <link rel="icon" href="Images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="final.css" />
+</head>
+<body>
+  <div class="logo">
+    <img src="Images/Logo.png" alt="Logo">
+  </div>
+
+  <div class="heading-content">
+    <div class="sticker-container">
+      <h1>Add Stickers!</h1>
+      <p>(drag to reposition)</p>
+      <div class="sticker-btns">
+        <button id="addFish" class="sticker-btn fish-btn" title="Fish">Add Fish</button>
+        <button id="addOctopus" class="sticker-btn octopus-btn" title="Octopus">Add Octopus</button>
+        <button id="addSeaweed" class="sticker-btn seaweed-btn" title="Seaweed">Add Seaweed</button>
+        <button id="addAx" class="sticker-btn axolotl-btn" title="Axolotl">Add Axolotl</button>
+        <button id="addBubble" class="sticker-btn bubble-btn" title="Bubble">Add Bubble</button>
+        <button id="reset" class="sticker-btn reset-btn" title="Reset Stickers">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="canvasContainer">
+    <canvas id="finalCanvas" width="1176" height="1470"></canvas>
+  </div>
+
+  <div class="button-container">
+    <button id="downloadBtn">Download</button>
+    <button id="homeBtn">Home</button>
+  </div>
+
+  <script src="final.js"></script>
+</body>
+</html>
